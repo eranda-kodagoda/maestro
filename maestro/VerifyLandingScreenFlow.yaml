@@ -1,0 +1,31 @@
+appId: com.folia.app.staging
+---
+- launchApp
+- tapOn: "Log In"
+- tapOn:
+    id: "username"
+- inputText: "kodagodaeranda@gmail.com"
+- tapOn: "Continue"
+- tapOn:
+    id: "password"
+- inputText: "Test@123"
+- tapOn: "Continue"
+- extendedWaitUntil:
+    visible: "Projects"
+    timeout: 25000
+- assertVisible:
+    text: "All Projects"
+    index: 1
+- assertVisible:
+    text: "Shared with me"
+    index: 1
+- assertVisible:
+    text: "Personal"
+    index: 1
+- tapOn:
+    point: "89%,7%"
+- assertVisible: "Search"
+- tapOn:
+    point: "98%,7%"
+- tapOn: "Logout"
+- assertVisible: "Log In"
